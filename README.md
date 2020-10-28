@@ -301,6 +301,6 @@ Hopefully, this article was a useful brush-up of your knowledge. Stay tuned and 
 
 ## :clap: Acknowledgements
 
-- The Odin Project: [@sitepoint](https://www.sitepoint.com/)
+- Sitepoint: [@sitepoint](https://www.sitepoint.com/)
 - The Odin Project: [@theodinproject](https://www.theodinproject.com/)
 - Microverse: [@microverse](https://www.microverse.org/)
