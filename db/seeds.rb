@@ -48,4 +48,15 @@ Enrollment.destroy_all
   Enrollment.create(user_id: User.all.sample.id, game_id: Game.all.sample.id)
 end
 
+#creating comments
+Comment.destroy_all
+User.all.each do |u|
+  u.comments.create({body: Faker::Lorem.sentence(word_count: 3) })
+end
+
+
+Game.all.each do |g|
+  g.comments.create({body: Faker::Lorem.sentence(word_count: 3) })
+end
+
 

@@ -330,7 +330,82 @@ belongs_to :purse
 This type of relation is rarely used, but sometimes can come in handy.
 
 ## Polymorphic Associations <a name = "polymorphic"></a>
+Polymorphic associations may save the day in certain scenarios. Despite the scary name, the idea is simple: you have a model that may belong to many different models on a single association. Suppose, you are going to make games and users commentable. Of course, you might have two separate models called UserComment and GameComment but, all in all, comments are very similar except for the fact that they belong to different models. That’s when polymorphic associations come into play.
 
+Create a new Comment model:
+
+```
+$ rails g model Comment body:text commentable_id:integer:index commentable_type:string
+```
+Probably, you are already getting the idea. commentable_id is a foreign key to establish relation with other tables. commentable_type, in turn, will contain the actual name of a model to which a comment belongs. The migration:
+
+```
+create_table :comments do |t|
+  t.text :body
+  t.integer :commentable_id
+  t.string :commentable_type
+
+  t.timestamps
+end
+add_index :comments, :commentable_id
+```
+can be re-written as:
+
+```
+create_table :comments do |t|
+  t.text :body
+  t.references :commentable, polymorphic: true, index: true
+
+  t.timestamps
+end
+add_index :comments, :commentable_id
+```
+We’ve already seen the references method before, but this time it also comes with a :polymorphic option.
+
+Apply the migration:
+
+```
+$ rake db:migrate
+```
+The Comment model is going to have the belongs_to association, but with a small twist:
+
+models/comment.rb
+
+```
+belongs_to :commentable, polymorphic: true
+```
+
+As long as we called our fields :commentable_id and :commentable_type, the whole relation has to be called commentable.
+
+Now the User and Game models:
+
+models/user.rb
+
+
+```
+has_many :comments, as: :commentable
+```
+
+models/game.rb
+
+```
+
+has_many :comments, as: :commentable
+```
+
+:as is a special option explaining that this is a polymorphic association. Now, boot your console and try running:
+
+```
+$ u = User.create
+$ u.comments.create({body: 'test'})
+```
+Inside the comments table, commentable_type will be set to User and commentable_idto the user’s id. Your polymorphic association works great and now you can easily make other models commentable!
+
+
+## Conclusion <a name = "conclusion"></a>
+In this article, we’ve discussed various types of associations available in Rails. We’ve seen how to set them up and further customize. Official documentation contains a nice reference for each association, so be sure to check it out if you haven’t already done so.
+
+Hopefully, this article was a useful brush-up of your knowledge. Stay tuned and see you soon!
 
 👤 **Temesghen Tekeste**
 
