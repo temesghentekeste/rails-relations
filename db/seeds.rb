@@ -12,5 +12,10 @@ require 'faker'
   10.times do 
     Post.create(body: Faker::Lorem.sentence(word_count: 3), user_id: User.all.sample.id)
   end
+
+  Address.destroy_all
+  User.all.each do |u|
+    Address.create(street: Faker::Address.street_name, city: Faker::Address.city, country: Faker::Address.country, user_id: u.id)
+  end
 end
 
