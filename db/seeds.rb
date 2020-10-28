@@ -17,5 +17,21 @@ require 'faker'
   User.all.each do |u|
     Address.create(street: Faker::Address.street_name, city: Faker::Address.city, country: Faker::Address.country, user_id: u.id)
   end
+
+   #creating event
+   Event.destroy_all
+   10.times do 
+     Event.create(title: Faker::Lorem.sentence(word_count: 3))
+   end
+   
+   #creating events
+   User.all.each do |u|
+      u.events.destroy_all
+   end
+   User.all.each do |u|
+     event = Event.all.sample
+     u.events << event
+     u.save
+   end
 end
 
