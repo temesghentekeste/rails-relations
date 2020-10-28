@@ -294,7 +294,13 @@ In this article, we’ve discussed various types of associations available in Ra
 
 Hopefully, this article was a useful brush-up of your knowledge. Stay tuned and see you soon!
 
-Ilya Bodrov-Krukowski
-Ilya Bodrov-Krukowski
-Ilya Bodrov is personal IT teacher, a senior engineer working at Campaigner LLC, author and teaching assistant at Sitepoint and lecturer at Moscow Aviations Institute. His primary programming languages are Ruby (with Rails) and JavaScript. He enjoys coding, teaching people and learning new things. Ilya also has some Cisco and Microsoft certificates and was working as a tutor in an educational center for a couple of years. In his free time he tweets, writes posts for his website, participates in OpenSource projects, goes in for sports and plays music.
 
+## Article can be found:
+
+- The Odin Project: [@sitepoint](https://www.sitepoint.com/brush-up-your-knowledge-of-rails-associations//)
+
+## :clap: Acknowledgements
+
+- The Odin Project: [@sitepoint](https://www.sitepoint.com/)
+- The Odin Project: [@theodinproject](https://www.theodinproject.com/)
+- Microverse: [@microverse](https://www.microverse.org/)
