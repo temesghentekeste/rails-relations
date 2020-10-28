@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_28_122702) do
+ActiveRecord::Schema.define(version: 2020_10_28_152912) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street"
@@ -51,12 +51,27 @@ ActiveRecord::Schema.define(version: 2020_10_28_122702) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "payment_histories", force: :cascade do |t|
+    t.integer "purse_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["purse_id"], name: "index_payment_histories_on_purse_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.integer "user_id", null: false
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "purses", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "funds"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_purses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,5 +84,7 @@ ActiveRecord::Schema.define(version: 2020_10_28_122702) do
   add_foreign_key "enrollments", "users"
   add_foreign_key "events_users", "events"
   add_foreign_key "events_users", "users"
+  add_foreign_key "payment_histories", "purses"
   add_foreign_key "posts", "users"
+  add_foreign_key "purses", "users"
 end
