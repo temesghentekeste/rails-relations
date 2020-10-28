@@ -22,6 +22,8 @@ A repo that explores the basics of Activer Record Associatons in Rails. Such ass
 <a href="#many-to-many">Many-to-many</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#polymorphic">Polymorphic one-to-many</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#conclusion">Conclusion</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#social">Social</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#contrubuting">Contributing</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#ackno">Acknowledgements</a>
 </p>
 
@@ -407,14 +409,14 @@ In this article, we’ve discussed various types of associations available in Ra
 
 Hopefully, this article was a useful brush-up of your knowledge. Stay tuned and see you soon!
 
-👤 **Temesghen Tekeste**
+👤 **Temesghen Tekeste** <a name = "social"></a>
 
 - Github: [@temesghentekeste](https://github.com/temesghentekeste)
 - Twitter: [@temesghentekes1](https://twitter.com/temesghentekes1)
 - Linkedin: [temsghen-tekeste-bahta-8b5243193](https://www.linkedin.com/in/temesghentekeste/)
 
 
-## 🤝 Contributing
+## 🤝 Contributing <a name = "contrubuting"></a>
 
 Contributions, issues and feature requests are welcome!
 
@@ -424,7 +426,7 @@ Feel free to check the [issues page](https://github.com/temesghentekeste/rails-r
 
 - Sitepoint: [@sitepoint](https://www.sitepoint.com/brush-up-your-knowledge-of-rails-associations//)
 
-## :clap: Acknowledgements
+## :clap: Acknowledgements <a name = "ackno"></a>
 
 - Sitepoint: [@sitepoint](https://www.sitepoint.com/)
 - The Odin Project: [@theodinproject](https://www.theodinproject.com/)
