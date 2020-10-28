@@ -31,6 +31,7 @@ A repo that explores the basics of Activer Record Associatons in Rails. Such ass
 
 - Ruby on Rails (Version: 6.0.3.2)
 - Ruby (Version: 2.7.1)
+- Faker gem
 
 
 
